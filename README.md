@@ -1,4 +1,4 @@
-# shard.cr
+# shard.cr [![Build Status](https://travis-ci.org/maiha/shard.cr.svg?branch=master)](https://travis-ci.org/maiha/shard.cr)
 
 compile-time shard.yml reader for [Crystal](http://crystal-lang.org/).
 
