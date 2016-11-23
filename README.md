@@ -3,6 +3,7 @@
 compile-time shard.yml reader for [Crystal](http://crystal-lang.org/).
 
 - Are you still dawdling in `version.cr` ?
+- example: https://github.com/maiha/pcap.cr/commit/8a1f26e49223c431d7091b696ca72b9c2353276f
 
 ## API
 
@@ -54,8 +55,6 @@ module Foo
   VERSION = Shard.version
 end
 ```
-
-- see real example: https://github.com/maiha/pcap.cr/commit/8a1f26e49223c431d7091b696ca72b9c2353276f
 
 ### Creating license sessage
 
