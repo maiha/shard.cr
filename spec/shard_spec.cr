@@ -9,7 +9,7 @@ describe Shard do
 
   describe ".name" do
     it "should return package name (String)" do
-      Shard.name.should eq("shard.cr")
+      Shard.name.should eq("shard")
       Shard.name.should be_a(String)
     end
   end
@@ -37,7 +37,7 @@ describe Shard do
 
   describe "#[key]" do
     it "should lookup the key (YAML::Type)" do
-      Shard["name"].should eq("shard.cr")
+      Shard["name"].should eq("shard")
       Shard["name"].should be_a(YAML::Type)
     end
 
@@ -50,7 +50,7 @@ describe Shard do
 
   describe "#[key]?" do
     it "should lookup the key (YAML::Type)" do
-      Shard["name"]?.should eq("shard.cr")
+      Shard["name"]?.should eq("shard")
       Shard["name"]?.should be_a(YAML::Type)
     end
 
@@ -62,7 +62,7 @@ describe Shard do
 
   describe "#str(key)" do
     it "should lookup the key (String)" do
-      Shard.str("name").should eq("shard.cr")
+      Shard.str("name").should eq("shard")
       Shard.str("name").should be_a(String)
     end
 
@@ -81,7 +81,7 @@ describe Shard do
 
   describe "#str?(key)" do
     it "should lookup the key (String)" do
-      Shard.str?("name").should eq("shard.cr")
+      Shard.str?("name").should eq("shard")
       Shard.str?("name").should be_a(String)
     end
 
