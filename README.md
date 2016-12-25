@@ -25,6 +25,13 @@ Shard.array(key)  : Int32?
 
 ## Usage
 
+```yaml
+dependencies:
+  shard:
+    github: maiha/shard.cr
+    version: 0.1.2
+```
+
 `Shard.xxx` returns the value.
 
 ```crystal
