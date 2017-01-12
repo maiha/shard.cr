@@ -9,7 +9,7 @@ compile-time shard.yml reader for [Crystal](http://crystal-lang.org/).
 dependencies:
   shard:
     github: maiha/shard.cr
-    version: 0.1.2
+    version: 0.2.0
 ```
 
 ## Usage
@@ -110,7 +110,7 @@ dependencies:
 
 #### 0.2.0
 
-- [ ] information for git repository
+- [x] information for git repository
 
 #### 0.3.0
 
