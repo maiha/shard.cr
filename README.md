@@ -96,16 +96,6 @@ Copyright (c) 2016 maiha <maiha@wota.jp>
 
 See [spec/shard_spec.cr](spec/shard_spec.cr)
 
-## Installation
-
-Add this to your application's `shard.yml`:
-
-```yaml
-dependencies:
-  shard:
-    github: maiha/shard.cr
-```
-
 ## Roadmap
 
 #### 0.2.0
