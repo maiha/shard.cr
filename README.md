@@ -5,6 +5,39 @@ compile-time shard.yml reader for [Crystal](http://crystal-lang.org/).
 - Are you still dawdling in `version.cr` ?
 - example: https://github.com/maiha/pcap.cr/commit/8a1f26e49223c431d7091b696ca72b9c2353276f
 
+```yaml
+dependencies:
+  shard:
+    github: maiha/shard.cr
+    version: 0.1.2
+```
+
+## Usage
+
+`Shard.xxx` returns the value.
+
+```crystal
+require "shard"
+
+Shard.name            # => "foo"
+Shard.version         # => "0.1.0"
+Shard.git_version     # => "0.1.0+2"
+Shard.git_description # => "foo 0.1.0+2 [0d23415] (2017-01-13)"
+```
+
+where assumed that we have following `shard.yml` and git repo.
+
+```yml
+name: foo
+version: 0.1.0
+```
+
+```
+0d23415 2017-01-13 04:01 maiha   o [master] WIP
+83e1f9b 2017-01-13 04:00 maiha   o fix typo
+536accd 2017-01-13 03:49 maiha   I <v0.1.0> first release
+```
+
 ## API
 
 ```crystal
@@ -14,6 +47,9 @@ Shard.authors     : Array(String)
 Shard.program     : String
 Shard.time        : Time
 
+Shard.git_version     : String
+Shard.git_description : String
+
 Shard[key]        : YAML::Type
 Shard[key]?       : YAML::Type?
 Shard.str(key)    : String
@@ -21,31 +57,6 @@ Shard.str?(key)   : String?
 Shard.int(key)    : Int32
 Shard.int?(key)   : Int32?
 Shard.array(key)  : Int32?
-```
-
-## Usage
-
-```yaml
-dependencies:
-  shard:
-    github: maiha/shard.cr
-    version: 0.1.2
-```
-
-`Shard.xxx` returns the value.
-
-```crystal
-require "shard"
-
-Shard.name   # => "foo"
-Shard.vesion # => "0.1.0"
-```
-
-where assumed that we have following setting in `shard.yml` .
-
-```yml
-name: foo
-version: 0.1.0
 ```
 
 ## Example
@@ -98,6 +109,10 @@ dependencies:
 ## Roadmap
 
 #### 0.2.0
+
+- [ ] information for git repository
+
+#### 0.3.0
 
 - [ ] `Shard.dependencies`
 

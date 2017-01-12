@@ -35,6 +35,21 @@ describe Shard do
     end
   end
 
+  describe ".git_version" do
+    it "should return git repository version (String)" do
+      Shard.git_version.should match(/^\d+\.\d+\.\d+(\+\d+)?$/)
+      Shard.git_version.should be_a(String)
+    end
+  end
+
+  describe ".git_description" do
+    it "should return git repository description (String)" do
+      # expected: "shard 0.1.2+2 [f53da38] (2017-01-13)"
+      Shard.git_description.should match(/^shard \d+\.\d+\.\d+(\+\d+)? /)
+      Shard.git_description.should be_a(String)
+    end
+  end
+
   describe "#[key]" do
     it "should lookup the key (YAML::Type)" do
       Shard["name"].should eq("shard")

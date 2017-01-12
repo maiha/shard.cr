@@ -15,6 +15,17 @@ module Shard
   end
 
   ######################################################################
+  ### Git repository
+
+  def git_version
+    Git.version
+  end
+
+  def git_description
+    Git.description
+  end
+
+  ######################################################################
   ### Properties
 
   field name   , "str"
@@ -31,6 +42,10 @@ module Shard
   
   def time
     TIME
+  end
+
+  def to_s(io : IO)
+    git_description
   end
 
   extend self
