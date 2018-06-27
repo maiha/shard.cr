@@ -51,9 +51,9 @@ describe Shard do
   end
 
   describe "#[key]" do
-    it "should lookup the key (YAML::Type)" do
+    it "should lookup the key (YAML::Any::Type)" do
       Shard["name"].should eq("shard")
-      Shard["name"].should be_a(YAML::Type)
+      Shard["name"].should be_a(YAML::Any::Type)
     end
 
     it "should raise when the key is not found" do
@@ -64,9 +64,9 @@ describe Shard do
   end
 
   describe "#[key]?" do
-    it "should lookup the key (YAML::Type)" do
+    it "should lookup the key (YAML::Any::Type)" do
       Shard["name"]?.should eq("shard")
-      Shard["name"]?.should be_a(YAML::Type)
+      Shard["name"]?.should be_a(YAML::Any::Type)
     end
 
     it "should return nil when the key is not found" do

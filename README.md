@@ -12,6 +12,10 @@ dependencies:
     version: 0.2.0
 ```
 
+#### crystal versions
+- v0.2.0 for crystal-0.24 or lower
+- v0.3.0 for crystal-0.25 or higher
+
 ## Usage
 
 `Shard.xxx` returns the value.

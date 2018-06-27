@@ -6,11 +6,11 @@ module Shard
   ######################################################################
   ### API
 
-  def []?(key) : YAML::Type?
+  def []?(key) : YAML::Any::Type?
     DATA[key]?.try(&.raw)
   end
 
-  def [](key) : YAML::Type
+  def [](key) : YAML::Any::Type
     self[key]? || raise NotFound.new(key)
   end
 
