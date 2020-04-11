@@ -1,6 +1,7 @@
 # shard.cr [![Build Status](https://travis-ci.org/maiha/shard.cr.svg?branch=master)](https://travis-ci.org/maiha/shard.cr)
 
 compile-time shard.yml reader for [Crystal](http://crystal-lang.org/).
+**supported versions** : 0.27.2 0.31.1 0.32.1 0.33.0 0.34.0
 
 - Are you still dawdling in `version.cr` ?
 - example: https://github.com/maiha/pcap.cr/commit/8a1f26e49223c431d7091b696ca72b9c2353276f
@@ -11,10 +12,6 @@ dependencies:
     github: maiha/shard.cr
     version: 0.3.0
 ```
-
-#### crystal versions
-- v0.2.0 for crystal-0.24 or lower
-- v0.3.0 for crystal-0.25 or higher
 
 ## Usage
 

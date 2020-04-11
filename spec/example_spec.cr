@@ -2,7 +2,7 @@ require "./spec_helper"
 
 # mock for license
 def Time.epoch(seconds : Int) : Time
-  Time.new(2016, 3, 31)
+  Pretty.now(2016, 3, 31)
 end
 
 describe "Examples" do
