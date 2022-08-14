@@ -111,4 +111,18 @@ describe Shard do
       end
     end
   end
+
+  describe "(runtime)" do
+    it "::ROOT" do
+      Shard::ROOT
+    end
+    
+    it "::DATA" do
+      Shard::DATA
+    end
+
+    it "::TIME" do
+      Shard::TIME
+    end
+  end
 end
