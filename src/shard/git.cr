@@ -17,9 +17,14 @@ module Shard
     end
 
     @@version_and_sha : {String, String?}?
+    @@branch : String?
 
     def self.version_and_sha
       @@version_and_sha ||= compute_version_and_sha
+    end
+
+    def self.branch
+      @@branch ||= compute_branch
     end
 
     private def self.compute_version_and_sha
@@ -42,6 +47,10 @@ module Shard
       tag = "#{tag}+#{commits}" unless commits == "0" # Reappend commits since release unless we hit it exactly
 
       {tag, sha}
+    end
+
+    private def self.compute_branch
+      {{ `(git rev-parse --abbrev-ref HEAD 2>/dev/null) || true`.stringify.chomp }}
     end
 
     def self.date

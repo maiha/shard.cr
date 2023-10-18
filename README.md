@@ -24,6 +24,7 @@ Shard.name            # => "foo"
 Shard.version         # => "0.1.0"
 Shard.git_version     # => "0.1.0+2"
 Shard.git_description # => "foo 0.1.0+2 [0d23415] (2017-01-13)"
+Shard.git_branch      # => "main"
 ```
 
 where assumed that we have following `shard.yml` and git repo.
@@ -50,6 +51,7 @@ Shard.time        : Time
 
 Shard.git_version     : String
 Shard.git_description : String
+Shard.git_branch      : String
 
 Shard[key]        : YAML::Type
 Shard[key]?       : YAML::Type?

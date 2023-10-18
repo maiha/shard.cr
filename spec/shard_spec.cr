@@ -50,6 +50,13 @@ describe Shard do
     end
   end
 
+  describe ".git_branch" do
+    it "should return git repository branch name (String)" do
+      # expected: "main"
+      Shard.git_branch.should be_a(String)
+    end
+  end
+
   describe "#[key]" do
     it "should lookup the key (YAML::Any::Type)" do
       Shard["name"].should eq("shard")

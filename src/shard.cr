@@ -26,6 +26,10 @@ module Shard
     Git.description
   end
 
+  def git_branch
+    Git.branch
+  end
+
   ######################################################################
   ### Properties
 
