@@ -1,7 +1,7 @@
 require "./spec_helper"
 
 # mock for license
-def Time.epoch(seconds : Int) : Time
+def Time.unix(seconds : Int) : Time
   Pretty.now(2016, 3, 31)
 end
 
