@@ -1,20 +1,27 @@
+MAKE=make --no-print-directory
 SHELL=/bin/bash
+.SHELLFLAGS = -o pipefail -c
+
+TARGET=spec
 
 all: ci
 
 ######################################################################
 ### testing
 
-.PHONY: ci
-ci: check_version_mismatch spec
+.PHONY : ci
+ci:
+	@echo "Please run test task with crystal version like this."
+	@echo "  make test/1.13.1"
 
-.PHONY : spec
-spec:
-	crystal spec -v --fail-fast
+test/%: shard.lock
+	@echo "----------------------------------------------------------------------"
+	@echo "[$*] TARGET=$(TARGET) CFLAGS=$(CFLAGS)"
+	@echo "----------------------------------------------------------------------"
+	@docker run -t -u "`id -u`" -v "`pwd`:/v" -w /v --rm "crystallang/crystal:$*" crystal spec $(VERBOSE) $(CFLAGS) $(TARGET)
 
-.PHONY : check_version_mismatch
-check_version_mismatch: shard.yml README.md
-	diff -w -c <(grep version: README.md | head -1) <(grep ^version: shard.yml)
+shard.lock: shard.yml
+	shards update
 
 ######################################################################
 ### versioning
